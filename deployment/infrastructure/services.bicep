@@ -26,6 +26,24 @@ module storageAccount 'storageAccount.bicep' = {
   }
 }
 
+var cosmosDbName = '${applicationName}-db'
+var cosmosDbContainerName = 'myData'
+
+module cosmosDB 'cosmosDB.bicep' = {
+  name: 'cosmosdb-deployment'
+  params:{
+    name: applicationName
+    location: location
+    keyVaultName: keyVault.outputs.keyVaultName
+    databaseName: cosmosDbName
+    containerName: cosmosDbContainerName
+    containerPartitionKeyName: '/myPartitionKey'
+  }
+  dependsOn:[
+    keyVault
+  ]
+}
+
 module appServicePlan 'appServicePlan.bicep' = {
   name: 'app-service-plan-deployment'
   params:{
@@ -66,10 +84,14 @@ module apiFunctionAppSettingsModule 'functionAppSettings.bicep' = {
     appInsightsKey: appInsights.outputs.appInsightsKey
     functionAppName: functionApp.outputs.functionAppName
     storageAccountSecretUri: storageAccount.outputs.storageAccountSecretUri
+    cosmosDbSecretUri: cosmosDB.outputs.secretConnectionStringUri
+    cosmosDbName: cosmosDbName
+    cosmosDbContainerName: cosmosDbContainerName
     runtime: 'dotnet'
   }  
   dependsOn:[
     functionApp
     functionAppAccessPolicy
+    cosmosDB
   ]
 }
