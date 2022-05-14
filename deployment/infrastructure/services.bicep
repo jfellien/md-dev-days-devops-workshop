@@ -8,3 +8,11 @@ module appInsights 'appInsights.bicep' = {
     location: location
   }
 }
+
+module storageAccount 'storageAccount.bicep' = {
+  name:'storage-account-deployment'
+  params:{
+    storageAccountName: applicationName
+    location: location
+  }
+}

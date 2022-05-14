@@ -32,7 +32,13 @@ Vermittlung des DevOps Prinzips anhand einer Serverless Application
     
     * Infrastruktur ausrollen
         ```
-        az deployment sub create --template-file main.bicep --location germanywestcentral --parameters resourceGroupName=md-dev-days applicationName=orderfood attendeeId=<Teilnehmerkennung max 3 Zeichen>
+        az deployment sub create `
+            --template-file main.bicep `
+            --location germanywestcentral `
+            --parameters `
+                resourceGroupName=md-dev-days `
+                applicationName=orderfood `
+                attendeeId=<Teilnehmerkennung max 3 Zeichen>
         ```
 
 1) Deployment der Azure Function (Yaml)
