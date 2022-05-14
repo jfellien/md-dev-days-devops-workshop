@@ -43,4 +43,15 @@ Vermittlung des DevOps Prinzips anhand einer Serverless Application
 
 1) Deployment der Azure Function (Yaml)
 ---
+
 ### Zweite Iteration
+---
+
+1) Hinzufügen eines KeyVault
+    * Berechtigung der Function zum Lesen im KeyVault hinzufügen
+1) Hinzufügen einer CosmosDB
+    * Hinzufügen als Infrastrukturresource
+    * Einfügen des ConnectionStrings zum KeyVault
+1) CosmosDB Binding zur Function hinzufügen
+    * Anlegen eines Settings
+    * Anlegen eines Parameters
