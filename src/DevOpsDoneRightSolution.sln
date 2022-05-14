@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32414.318
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderFunction_1_HttpTriggered", "..\OrderFunction_1_HttpTriggered\OrderFunction_1_HttpTriggered.csproj", "{E638A911-03F1-45AF-95D5-6391A0A90152}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderFunction_1_HttpTriggered", "OrderFunction_1_HttpTriggered\OrderFunction_1_HttpTriggered.csproj", "{E638A911-03F1-45AF-95D5-6391A0A90152}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
