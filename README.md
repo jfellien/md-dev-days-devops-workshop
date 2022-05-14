@@ -49,6 +49,7 @@ Vermittlung des DevOps Prinzips anhand einer Serverless Application
 
 1) Hinzufügen eines KeyVault
     * Berechtigung der Function zum Lesen im KeyVault hinzufügen
+1) Connectionstring des StorageAccount in den KeyVault legen
 1) Hinzufügen einer CosmosDB
     * Hinzufügen als Infrastrukturresource
     * Einfügen des ConnectionStrings zum KeyVault

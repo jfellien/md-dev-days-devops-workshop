@@ -22,6 +22,7 @@ module storageAccount 'storageAccount.bicep' = {
   params:{
     storageAccountName: applicationName
     location: location
+    keyVaultName: keyVault.outputs.keyVaultName
   }
 }
 
@@ -64,10 +65,11 @@ module apiFunctionAppSettingsModule 'functionAppSettings.bicep' = {
   params: {
     appInsightsKey: appInsights.outputs.appInsightsKey
     functionAppName: functionApp.outputs.functionAppName
-    storageAccountConnectionString: storageAccount.outputs.storageAccountConnectionString
+    storageAccountSecretUri: storageAccount.outputs.storageAccountSecretUri
     runtime: 'dotnet'
   }  
   dependsOn:[
     functionApp
+    functionAppAccessPolicy
   ]
 }
