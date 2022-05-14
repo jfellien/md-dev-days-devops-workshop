@@ -8,3 +8,16 @@ Content-Type: application/json
     "FoodName": "Spicy Vegie Döner",
     "Amount": 1
 }
+
+###
+POST http://orderfood<Add here your attendeeId>.azurewebsites.net/api/order HTTP/1.1
+X-functions-key: <Add here your Functions Key>
+Content-Type: application/json
+
+{
+    "RestaurantId" : 1,
+    "RestaurantName" : "Hans Döner",
+    "FoodId": 2,
+    "FoodName": "Spicy Vegie Döner",
+    "Amount": 1
+}
