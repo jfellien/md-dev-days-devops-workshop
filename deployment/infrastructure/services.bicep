@@ -1,6 +1,14 @@
 param applicationName string
 param location string
 
+module keyVault 'keyVault.bicep' = {
+  name: 'keyVault-deployment'
+  params:{
+    name: applicationName
+    location: location
+  }
+}
+
 module appInsights 'appInsights.bicep' = {
   name: 'appInsights-deployment'
   params:{
@@ -36,6 +44,18 @@ module functionApp 'functionApp.bicep' = {
     appInsights
     storageAccount
     appServicePlan
+  ]
+}
+
+module functionAppAccessPolicy 'keyVaultAccessPolicy.bicep' = {
+  name: 'function-app-keyvault-access-policy-deployment'
+  params:{
+    keyVaultName: keyVault.outputs.keyVaultName
+    principalId: functionApp.outputs.principalId
+    permission: 'low'
+  }
+  dependsOn:[
+    functionApp
   ]
 }
 
