@@ -4,7 +4,7 @@
 # https://docs.microsoft.com/en-us/azure/devops/pipelines/languages/dotnet-core
 
 trigger:
-- Erste-Iteration
+- Zweite-Iteration
 
 variables:
   # Azure Resource Manager connection created during pipeline creation
@@ -15,9 +15,6 @@ variables:
 
   # Agent VM image name
   vmImageName: 'windows-2019'
-
-  # Working Directory
-  workingDirectory: '$(System.DefaultWorkingDirectory)/OrderFunction_1_HttpTriggered'
 
 stages:
 - stage: Build
@@ -31,7 +28,7 @@ stages:
 
     steps:
     - task: UseDotNet@2
-      displayName: "Install .NET Core SDK"
+      displayName: "Install .NET Framework 6.x"
       inputs:
         version: 6.x
         performMultiLevelLookup: true
