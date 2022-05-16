@@ -26,7 +26,8 @@ namespace OrderFunction_1_HttpTriggered
             return new OkObjectResult(new
             {
                 message = "Order is on the way",
-                orderId = orderId
+                orderId = orderId,
+                foodname = req.FoodName
             });
         }
     }
