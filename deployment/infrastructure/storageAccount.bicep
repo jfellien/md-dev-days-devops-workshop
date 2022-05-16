@@ -10,9 +10,6 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2021-02-01' = {
   sku:{
     name: 'Standard_LRS'
   }
-  tags:{
-    deployment_cause:'deployment script'
-  }
 }
 
 resource keyVaultSettings 'Microsoft.KeyVault/vaults@2021-06-01-preview' existing = {

@@ -1,8 +1,5 @@
 param functionAppName string
 param storageAccountSecretUri string
-param cosmosDbSecretUri string
-param cosmosDbName string
-param cosmosDbContainerName string
 param appInsightsKey string
 param runtime string
 
@@ -18,8 +15,5 @@ resource defaultFunctionAppAppsettings 'Microsoft.Web/sites/config@2018-11-01' =
     WEBSITE_ADD_SITENAME_BINDINGS_IN_APPHOST_CONFIG: 1
     WEBSITE_CONTENTAZUREFILECONNECTIONSTRING: storageAccountKeyVaultSecret
     WEBSITE_CONTENTSHARE: toLower(functionAppName)
-    COSMOSDBCONNECTION: '@Microsoft.KeyVault(SecretUri=${cosmosDbSecretUri})'
-    COSMOSDBNAME: cosmosDbName
-    COSMOSDBCONTAINERNAME: cosmosDbContainerName
   }
 }

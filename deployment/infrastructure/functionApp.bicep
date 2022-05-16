@@ -12,9 +12,6 @@ resource functionApp 'Microsoft.Web/sites@2020-12-01' = {
   properties: {
     serverFarmId: appServicePlanId
   }
-  tags:{
-    deployment_cause:'deployment script'
-  }
 }
 
 output functionAppName string = functionApp.name

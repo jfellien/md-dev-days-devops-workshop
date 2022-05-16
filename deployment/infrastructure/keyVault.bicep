@@ -15,9 +15,6 @@ resource keyVault 'Microsoft.KeyVault/vaults@2021-06-01-preview' = {
       name: 'standard'
       family: 'A'
     }
-  }
-  tags:{
-    deployment_cause:'deployment script'
   }  
 }
 
